@@ -1,8 +1,17 @@
 public class ReverseString {
     public static void main(String[] args) {
         char[] s = {'h','e','l','l','o'};
-        for(int i=s.length-1;i>=0;i--){
-            System.out.print(s[i]);
+        int left = 0;
+        int right = s.length-1;
+        while(left<right) {
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            left++;
+            right--;
+        }
+        for(char ch:s){
+            System.out.print(ch+"\t");
         }
     }
 }
